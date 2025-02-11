@@ -1,0 +1,40 @@
+Keyword in Context (KWIC) y su Implementación en Arquitecturas de Software
+
+Keyword in Context (KWIC) es una técnica utilizada para la recuperación de información y el análisis de texto, en la cual se presentan palabras clave junto con su contexto inmediato. Se usa ampliamente en procesamiento de lenguaje natural, sistemas de indexación y motores de búsqueda. En este documento, exploraremos dos formas de implementar KWIC utilizando diferentes patrones arquitectónicos: Tubos y Filtros e Invocación Implícita.
+
+KWIC en la Arquitectura de Tubos y Filtros
+
+La arquitectura de Tubos y Filtros se basa en una secuencia de transformaciones del texto, donde cada filtro realiza una tarea específica y pasa la información al siguiente. Los componentes y flujo de datos incluyen: Lectura de Texto, que recibe el texto de entrada y lo divide en líneas o palabras. Identificación de Palabras Clave, que busca las palabras clave dentro del texto segmentado. Extracción del Contexto, que obtiene las palabras circundantes a la palabra clave. Ordenamiento y Visualización, que organiza las ocurrencias y genera la salida final.
+
+Ejemplo de Implementación:
+
+Entrada:
+
+La arquitectura de tubos y filtros es un patrón de diseño de software. Los tubos pueden conectarse con diferentes filtros.
+
+Si la palabra clave es "tubos", la salida sería:
+
+... arquitectura de tubos y filtros ...
+... Los tubos pueden conectarse con ...
+
+Cada filtro transforma y envía los datos al siguiente, asegurando modularidad y reutilización del código.
+
+KWIC en la Arquitectura de Invocación Implícita
+
+En la arquitectura de Invocación Implícita, los módulos no se conectan directamente entre sí, sino que reaccionan a eventos generados por otros componentes. Esto reduce el acoplamiento y mejora la escalabilidad. Los componentes y flujo de eventos incluyen: Entrada de Texto (Publicador), que lee el texto y emite un evento TextoLeído. Identificación de Palabras Clave (Suscriptor), que escucha el evento TextoLeído y emite PalabrasClaveIdentificadas. Extracción del Contexto (Suscriptor), que escucha PalabrasClaveIdentificadas y emite ContextoExtraído. Ordenamiento y Visualización (Suscriptor), que escucha ContextoExtraído y genera la salida.
+
+Ejemplo de Flujo de Eventos:
+
+El usuario ingresa el texto → Evento TextoLeído. Se identifican palabras clave → Evento PalabrasClaveIdentificadas. Se extrae el contexto → Evento ContextoExtraído. Se ordena y muestra la salida → Evento ResultadosGenerados.
+
+Esta arquitectura permite que nuevos componentes se integren sin modificar el sistema existente.
+
+Comparación entre ambas arquitecturas:
+
+La arquitectura de Tubos y Filtros tiene un flujo de datos secuencial, con un acoplamiento fuerte, escalabilidad moderada y requiere cambios en el flujo si se necesita modificar. La arquitectura de Invocación Implícita se basa en eventos, tiene un acoplamiento débil, alta escalabilidad y permite añadir nuevos eventos sin modificar el sistema.
+
+Conclusiones
+
+Ambas arquitecturas ofrecen ventajas dependiendo del contexto en que se implementen. La arquitectura de Tubos y Filtros es adecuada cuando se necesita un procesamiento secuencial claro y modular. En cambio, la arquitectura de Invocación Implícita permite un sistema más flexible, ideal para aplicaciones escalables y en entornos de microservicios. Implementar KWIC con estas arquitecturas ayuda a comprender sus diferencias y aplicaciones prácticas en el desarrollo de software.
+
+ 
