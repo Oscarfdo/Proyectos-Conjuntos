@@ -1,40 +1,22 @@
-Keyword in Context (KWIC) y su Implementación en Arquitecturas de Software
-
-Keyword in Context (KWIC) es una técnica utilizada para la recuperación de información y el análisis de texto, en la cual se presentan palabras clave junto con su contexto inmediato. Se usa ampliamente en procesamiento de lenguaje natural, sistemas de indexación y motores de búsqueda. En este documento, exploraremos dos formas de implementar KWIC utilizando diferentes patrones arquitectónicos: Tubos y Filtros e Invocación Implícita.
-
-KWIC en la Arquitectura de Tubos y Filtros
-
-La arquitectura de Tubos y Filtros se basa en una secuencia de transformaciones del texto, donde cada filtro realiza una tarea específica y pasa la información al siguiente. Los componentes y flujo de datos incluyen: Lectura de Texto, que recibe el texto de entrada y lo divide en líneas o palabras. Identificación de Palabras Clave, que busca las palabras clave dentro del texto segmentado. Extracción del Contexto, que obtiene las palabras circundantes a la palabra clave. Ordenamiento y Visualización, que organiza las ocurrencias y genera la salida final.
-
-Ejemplo de Implementación:
-
-Entrada:
-
-La arquitectura de tubos y filtros es un patrón de diseño de software. Los tubos pueden conectarse con diferentes filtros.
-
-Si la palabra clave es "tubos", la salida sería:
-
-... arquitectura de tubos y filtros ...
-... Los tubos pueden conectarse con ...
-
-Cada filtro transforma y envía los datos al siguiente, asegurando modularidad y reutilización del código.
-
-KWIC en la Arquitectura de Invocación Implícita
-
-En la arquitectura de Invocación Implícita, los módulos no se conectan directamente entre sí, sino que reaccionan a eventos generados por otros componentes. Esto reduce el acoplamiento y mejora la escalabilidad. Los componentes y flujo de eventos incluyen: Entrada de Texto (Publicador), que lee el texto y emite un evento TextoLeído. Identificación de Palabras Clave (Suscriptor), que escucha el evento TextoLeído y emite PalabrasClaveIdentificadas. Extracción del Contexto (Suscriptor), que escucha PalabrasClaveIdentificadas y emite ContextoExtraído. Ordenamiento y Visualización (Suscriptor), que escucha ContextoExtraído y genera la salida.
-
-Ejemplo de Flujo de Eventos:
-
-El usuario ingresa el texto → Evento TextoLeído. Se identifican palabras clave → Evento PalabrasClaveIdentificadas. Se extrae el contexto → Evento ContextoExtraído. Se ordena y muestra la salida → Evento ResultadosGenerados.
-
-Esta arquitectura permite que nuevos componentes se integren sin modificar el sistema existente.
-
-Comparación entre ambas arquitecturas:
-
-La arquitectura de Tubos y Filtros tiene un flujo de datos secuencial, con un acoplamiento fuerte, escalabilidad moderada y requiere cambios en el flujo si se necesita modificar. La arquitectura de Invocación Implícita se basa en eventos, tiene un acoplamiento débil, alta escalabilidad y permite añadir nuevos eventos sin modificar el sistema.
-
-Conclusiones
-
-Ambas arquitecturas ofrecen ventajas dependiendo del contexto en que se implementen. La arquitectura de Tubos y Filtros es adecuada cuando se necesita un procesamiento secuencial claro y modular. En cambio, la arquitectura de Invocación Implícita permite un sistema más flexible, ideal para aplicaciones escalables y en entornos de microservicios. Implementar KWIC con estas arquitecturas ayuda a comprender sus diferencias y aplicaciones prácticas en el desarrollo de software.
-
- 
+De cómo deben gobernarse los principados y los diferentes tipos de dominio
+Todos los Estados que han existido y existen han sido y son repúblicas o principados. Los principados pueden ser hereditarios o nuevos. Los heredados son aquellos gobernados por una familia durante un largo periodo, mientras que los nuevos pueden surgir de varias maneras: por conquista, por donación o por astucia.
+Cuando un príncipe nuevo ocupa un territorio donde ya existen costumbres y leyes establecidas, el mayor desafío es conservarlo. Si el pueblo está acostumbrado a una familia reinante, mantener el control es más fácil porque las estructuras de poder ya están en su lugar. Sin embargo, en los principados nuevos, el príncipe debe enfrentar mayores dificultades debido a la resistencia de los habitantes.
+Un príncipe puede adquirir su dominio por sus propias armas o por la fortuna ajena. Aquellos que lo logran mediante su propio esfuerzo y habilidad suelen consolidar su poder con mayor firmeza, pues su autoridad está basada en méritos y no en favores de terceros. Por otro lado, quienes dependen de la fortuna ajena y de ejércitos prestados encontrarán muchas más dificultades para mantenerse en el poder, ya que dependen de factores fuera de su control.
+De los principados mixtos
+Cuando un príncipe anexiona un nuevo territorio a sus dominios antiguos, surge el problema de la resistencia de los habitantes, quienes pueden estar acostumbrados a otras formas de gobierno. Para evitar rebeliones, el príncipe debe establecerse en el territorio, reforzar su autoridad mediante leyes y alianzas estratégicas, y eliminar a los posibles opositores.
+Una estrategia efectiva es colocar colonias en puntos estratégicos del territorio. Las colonias son menos costosas que un ejército permanente y generan menos descontento entre la población, ya que solo afectan directamente a un pequeño grupo. Otra estrategia es ganarse la confianza de los ciudadanos mediante beneficios y estabilidad.
+Sin embargo, el peor error que un príncipe puede cometer es permitir que se acumulen descontentos sin resolverlos. Si los problemas no se eliminan desde su origen, crecerán hasta volverse incontrolables.
+De los principados que se obtienen con armas ajenas o con fortuna
+Es mucho más difícil mantener un principado adquirido mediante el favor de otros que aquel conquistado con el propio esfuerzo. Cuando un territorio es entregado como un regalo o adquirido mediante promesas de alianzas, su posesión es inestable. El príncipe debe actuar rápidamente para consolidar su autoridad, eliminando rivales y estableciendo un gobierno firme.
+La historia ha mostrado que los gobernantes que dependen únicamente de la fortuna o de la voluntad de otros no duran mucho en el poder. Un gobernante prudente no debe confiar únicamente en la buena voluntad de sus aliados ni en las circunstancias favorables; debe asegurarse de construir una estructura de poder estable basada en la fuerza y el respeto de sus súbditos.
+De los principados civiles
+Un hombre puede llegar al poder gracias al apoyo del pueblo o de la nobleza. En ambos casos, la estabilidad de su gobierno depende de cómo maneje las expectativas y demandas de quienes lo han llevado al poder.
+Si un príncipe es elevado por la nobleza, debe asegurarse de que su gobierno no dependa demasiado de sus benefactores, ya que estos pueden conspirar en su contra si sienten que sus intereses están amenazados. Si el pueblo lo ha elegido, su mejor estrategia es asegurarse de que las masas estén satisfechas, pues su apoyo es la mejor defensa contra posibles complots.
+De la manera en que deben actuar los príncipes para conservar el poder
+La generosidad y la crueldad son herramientas que un príncipe debe saber utilizar sabiamente. Un gobernante que es demasiado generoso corre el riesgo de quedarse sin recursos y volverse dependiente de la nobleza o de préstamos externos. En cambio, un príncipe que equilibra la generosidad con la prudencia garantiza su estabilidad.
+Respecto a la crueldad, Maquiavelo afirma que es mejor ser temido que amado si ambas cosas no pueden lograrse simultáneamente. El temor garantiza el respeto y la obediencia, mientras que el amor es frágil y puede desvanecerse con facilidad. Sin embargo, el príncipe debe evitar ser odiado, pues el odio genera conspiraciones y rebeliones.
+De la importancia de la guerra y las armas
+Un príncipe debe siempre estar preparado para la guerra. La historia ha demostrado que los gobernantes que descuidan sus ejércitos están destinados a la derrota.
+Un príncipe prudente no debe depender de ejércitos mercenarios o auxiliares, pues estos no tienen lealtad y pueden volverse en su contra en momentos críticos. En cambio, debe contar con un ejército propio, compuesto por sus propios súbditos, que luche con convicción por la defensa de su territorio.
+Conclusión
+El arte de gobernar no depende de la suerte ni de la fortuna, sino de la habilidad del gobernante para adaptarse a las circunstancias, establecer alianzas estratégicas y utilizar la fuerza cuando sea necesario. Un príncipe exitoso es aquel que entiende que el poder debe consolidarse rápidamente y que el temor es un aliado más confiable que el amor en el juego del poder.

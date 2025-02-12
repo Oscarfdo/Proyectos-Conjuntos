@@ -12,7 +12,6 @@ public class Main {
             for (String line : lines) {
                 System.out.println();
                 System.out.println(line);
-                System.out.println();
             }
 
         } catch (IOException e) {
