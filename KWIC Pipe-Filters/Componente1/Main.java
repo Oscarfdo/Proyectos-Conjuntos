@@ -14,8 +14,19 @@ public class Main {
                 System.out.println(line);
             }
 
+            Rotacion rotacion = new Rotacion();
+            List<String> rotations = rotacion.process(lines);
+            //imprimir las rotaciones
+            System.out.println("Rotaciones:");
+            for (String rotation : rotations) {
+                System.out.println(rotation);
+            }
+
         } catch (IOException e) {
             System.out.println("Error al leer el archivo: " + e.getMessage());
         }
+
+
+        
     }
 }

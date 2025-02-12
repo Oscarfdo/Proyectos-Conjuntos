@@ -7,7 +7,7 @@ import java.util.List;
 public class Reader {
 
     // Ruta predeterminada del archivo (convertida en estática para acceso fácil)
-    private static final String FILE_PATH = "/Users/kueven/Documents/Repositorios/MCC/Proyectos-Conjuntos/KWIC Implicit Invocation/Read.txt";
+    private static final String FILE_PATH = "C:\\Users\\HP 15\\OneDrive - Instituto Tecnológico de Culiacán\\ts\\Maestria\\Arquitectura\\Programas\\Conjunto\\Proyectos-Conjuntos\\KWIC Pipe-Filters\\Componente1\\Leer.txt";
 
     // Método para leer el archivo y devolver las frases separadas por puntos y comas
     public static List<String> readInput() throws IOException {
