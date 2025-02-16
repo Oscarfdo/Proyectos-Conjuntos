@@ -1,23 +1,24 @@
-package componente1;
-
-import java.io.IOException;
-import java.util.List;
+import java.io.*;
 
 public class Main {
-    public static void main(String[] args) {
-        try {
-            // Obtener el contenido del archivo desde Reader
-            List<String> lines = Reader.readInput();
+    public static void main(String[] args) throws IOException {
+        // Crear tubos para conectar los filtros
+        PipedOutputStream salida1 = new PipedOutputStream();
+        PipedInputStream entrada1 = new PipedInputStream(salida1);
 
-            // Imprimir el contenido en Main
-            System.out.println("Contenido leído:");
-            for (String line : lines) {
-                System.out.println();
-                System.out.println(line);
-            }
+        PipedOutputStream salida2 = new PipedOutputStream();
+        PipedInputStream entrada2 = new PipedInputStream(salida2);
 
-        } catch (IOException e) {
-            System.out.println("Error al leer el archivo: " + e.getMessage());
-        }
+        PipedOutputStream salida3 = new PipedOutputStream();
+        PipedInputStream entrada3 = new PipedInputStream(salida3);
+
+        PipedOutputStream salida4 = new PipedOutputStream();
+        PipedInputStream entrada4 = new PipedInputStream(salida4);
+
+        // Crear los filtros y ejecutarlos en hilos
+        new Thread(new Lector(salida1)).start();
+        new Thread(new Rotacion(entrada1, salida2)).start();
+        new Thread(new Ordenar(entrada2, salida3)).start();
+        new Thread(new Imprimir(entrada3)).start();
     }
 }
