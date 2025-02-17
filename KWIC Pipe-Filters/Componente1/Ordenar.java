@@ -14,6 +14,7 @@ public class Ordenar implements Runnable {
         this.salida = salida;
     }
 
+    @Override
     public void run() {
         try {
             BufferedReader reader = new BufferedReader(new InputStreamReader(entrada));
@@ -28,7 +29,7 @@ public class Ordenar implements Runnable {
             }
 
             // Ordenar las rotaciones alfabéticamente
-            Collections.sort(rotaciones);
+            Collections.sort(rotaciones, String.CASE_INSENSITIVE_ORDER);
 
             // Escribir las rotaciones ordenadas en el siguiente tubo
             for (String rotacion : rotaciones) {

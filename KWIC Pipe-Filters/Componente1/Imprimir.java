@@ -8,6 +8,7 @@ public class Imprimir implements Runnable {
         this.entrada = entrada;
     }
 
+    @Override
     public void run() {
         try {
             BufferedReader reader = new BufferedReader(new InputStreamReader(entrada));

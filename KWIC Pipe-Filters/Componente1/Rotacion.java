@@ -11,6 +11,7 @@ public class Rotacion implements Runnable {
         this.salida = salida;
     }
 
+    @Override
     public void run() {
         try {
             BufferedReader reader = new BufferedReader(new InputStreamReader(entrada));

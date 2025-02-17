@@ -4,13 +4,15 @@ import java.nio.file.Path;
 import java.util.List;
 
 public class Lector implements Runnable {
-    private static final String FILE_PATH = "/Users/kueven/Documents/Repositorios/MCC/Proyectos-Conjuntos/KWIC Pipe-Filters/componente1/Read.txt";
+    //private static final String FILE_PATH = "/Users/kueven/Documents/Repositorios/MCC/Proyectos-Conjuntos/KWIC Pipe-Filters/componente1/Read.txt";
+    private static final String FILE_PATH = "KWIC Pipe-Filters/componente1/Leer.txt";
     private PipedOutputStream salida;
 
     public Lector(PipedOutputStream salida) {
         this.salida = salida;
     }
 
+    @Override
     public void run() {
         try {
             List<String> lines = Files.readAllLines(Path.of(FILE_PATH));
