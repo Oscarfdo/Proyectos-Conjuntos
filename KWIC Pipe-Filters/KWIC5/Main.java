@@ -1,17 +1,14 @@
 package KWIC5;
 
-import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.LinkedBlockingQueue;
-
 public class Main {
     public static void main(String[] args) {
         // Ruta del archivo de entrada
         String filePath = "KWIC Pipe-Filters/KWIC5/Leer.txt";
 
         // Crear colas para conectar los filtros
-        BlockingQueue<String> queue1 = new LinkedBlockingQueue<>();
-        BlockingQueue<String> queue2 = new LinkedBlockingQueue<>();
-        BlockingQueue<String> queue3 = new LinkedBlockingQueue<>();
+        Pipe queue1 = new Pipe();
+        Pipe queue2 = new Pipe();
+        Pipe queue3 = new Pipe();
 
         // Crear instancias de los filtros
         Reader inputFilter = new Reader(filePath, queue1);
