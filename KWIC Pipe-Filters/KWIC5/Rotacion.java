@@ -1,12 +1,10 @@
 package KWIC5;
 
-import java.util.concurrent.BlockingQueue;
-
 public class Rotacion implements Runnable {
-    private final BlockingQueue<String> inputQueue;
-    private final BlockingQueue<String> outputQueue;
+    private final Pipe inputQueue;
+    private final Pipe outputQueue;
 
-    public Rotacion(BlockingQueue<String> inputQueue, BlockingQueue<String> outputQueue) {
+    public Rotacion(Pipe inputQueue, Pipe outputQueue) {
         this.inputQueue = inputQueue;
         this.outputQueue = outputQueue;
     }

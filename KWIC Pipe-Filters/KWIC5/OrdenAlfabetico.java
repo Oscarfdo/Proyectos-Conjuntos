@@ -4,13 +4,12 @@ package KWIC5;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.concurrent.BlockingQueue;
 
 public class OrdenAlfabetico implements Runnable {
-    private final BlockingQueue<String> inputQueue;
-    private final BlockingQueue<String> outputQueue;
+    private final Pipe inputQueue;
+    private final Pipe outputQueue;
 
-    public OrdenAlfabetico(BlockingQueue<String> inputQueue, BlockingQueue<String> outputQueue) {
+    public OrdenAlfabetico(Pipe inputQueue, Pipe outputQueue) {
         this.inputQueue = inputQueue;
         this.outputQueue = outputQueue;
     }

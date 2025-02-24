@@ -3,13 +3,13 @@ package KWIC5;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.concurrent.BlockingQueue;
+
 
 public class Reader implements Runnable {
     private final String filePath;
-    private final BlockingQueue<String> outputQueue;
+    private final Pipe outputQueue;
 
-    public Reader(String filePath, BlockingQueue<String> outputQueue) {
+    public Reader(String filePath, Pipe outputQueue) {
         this.filePath = filePath;
         this.outputQueue = outputQueue;
     }

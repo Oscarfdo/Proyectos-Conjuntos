@@ -1,11 +1,9 @@
 package KWIC5;
 
-import java.util.concurrent.BlockingQueue;
-
 public class Salida implements Runnable {
-    private final BlockingQueue<String> inputQueue;
+    private final Pipe inputQueue;
 
-    public Salida(BlockingQueue<String> inputQueue) {
+    public Salida(Pipe inputQueue) {
         this.inputQueue = inputQueue;
     }
 

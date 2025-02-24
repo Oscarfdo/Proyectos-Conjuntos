@@ -6,7 +6,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 public class Main {
     public static void main(String[] args) {
         // Ruta del archivo de entrada
-        String filePath = "C:\\Users\\HP 15\\OneDrive - Instituto Tecnológico de Culiacán\\ts\\Maestria\\Arquitectura\\Programas\\Conjunto\\Proyectos-Conjuntos\\KWIC Pipe-Filters\\Componente2\\Leer.txt";
+        String filePath = "KWIC Pipe-Filters/KWIC5/Leer.txt";
 
         // Crear colas para conectar los filtros
         BlockingQueue<String> queue1 = new LinkedBlockingQueue<>();

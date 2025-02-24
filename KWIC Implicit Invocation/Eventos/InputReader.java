@@ -17,6 +17,6 @@ public class InputReader implements EventListener {
 
     @Override
     public void onEvent(Event event) {
-        // No necesita reaccionar a eventos en este caso
+        // No necesita reaccionar a eventos
     }
 }
