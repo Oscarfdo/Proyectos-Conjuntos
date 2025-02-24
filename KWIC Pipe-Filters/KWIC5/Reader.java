@@ -1,4 +1,4 @@
-package KWIC5;
+
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -17,12 +17,15 @@ public class Reader implements Runnable {
     @Override
     public void run() {
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                line = line.trim();
-                System.out.println("[Reader] Leyendo linea: " + line);
-                outputQueue.put(line); // Enviar línea al siguiente filtro
+            String[] lines = br.lines().toArray(String[]::new);
+            for(String line : lines){
+                 // Depuración
+                String[] sentences = line.split("(?<=[.,])\\s+");
 
+                for (String sentence : sentences) {
+                    System.out.println("[Reader] Enviando: " + sentence.trim()); // Depuración
+               outputQueue.put(sentence.trim()); // Enviar cada oración individualmente
+                }
             }
             outputQueue.put("EOF"); // Marcar el final del archivo
             System.out.println("[Reader] Fin de archivo");

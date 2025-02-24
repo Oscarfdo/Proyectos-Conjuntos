@@ -1,4 +1,4 @@
-package KWIC5;
+
 
 public class Rotacion implements Runnable {
     private final Pipe inputQueue;

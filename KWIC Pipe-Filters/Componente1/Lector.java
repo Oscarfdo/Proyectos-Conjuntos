@@ -19,12 +19,14 @@ public class Lector implements Runnable {
             BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(salida));
 
             for (String line : lines) {
+                System.out.println("[Lector] Línea leída: " + line); // Depuración
                 String[] sentences = line.split("(?<=[.,])\\s*");
                 for (String sentence : sentences) {
+                    System.out.println("[Lector] Enviando: " + sentence.trim()); // Depuración
                     writer.write(sentence.trim() + "\n"); // Enviar línea por línea
                 }
             }
-
+            
             writer.flush();
             writer.close();
         } catch (IOException e) {

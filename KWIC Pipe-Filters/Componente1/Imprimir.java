@@ -15,8 +15,10 @@ public class Imprimir implements Runnable {
             String line;
             System.out.println("Rotaciones ordenadas:");
             while ((line = reader.readLine()) != null) {
-                System.out.println(line);
+                System.out.println("[Imprimir] Mostrando: " + line);
+                //System.out.println(line);
             }
+            
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -1,4 +1,4 @@
-package KWIC5;
+
 
 
 import java.util.concurrent.BlockingQueue;

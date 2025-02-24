@@ -19,12 +19,14 @@ public class Rotacion implements Runnable {
 
             String line;
             while ((line = reader.readLine()) != null) {
+                System.out.println("[Rotacion] Recibida línea: " + line); // Depuración
                 List<String> rotations = generarRotaciones(line);
                 for (String rotation : rotations) {
+                    System.out.println("[Rotacion] Enviando rotación: " + rotation); // Depuración
                     writer.write(rotation + "\n");
                 }
             }
-
+            
             writer.flush();
             writer.close();
         } catch (IOException e) {

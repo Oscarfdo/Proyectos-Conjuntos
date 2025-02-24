@@ -1,5 +1,5 @@
 
-package KWIC5;
+
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -15,27 +15,36 @@ public class OrdenAlfabetico implements Runnable {
     }
 
     @Override
-    public void run() {
-        List<String> rotations = new ArrayList<>();
-        try {
-            while (true) {
-                String rotation = inputQueue.take(); // Tomar rotación de la cola anterior
-                if (rotation.equals("EOF")) {
-                    System.out.println("[OrdenAlfabetico] Ordenando rotaciones");
-                    Collections.sort(rotations, String.CASE_INSENSITIVE_ORDER); // Ordenar rotaciones
-                    for (String sortedRotation : rotations) {
-                        System.out.println("[OrdenAlfabetico] Rotación ordenada: " + sortedRotation);
-                        outputQueue.put(sortedRotation); // Enviar rotación ordenada al siguiente filtro
-                    }
-                    outputQueue.put("EOF"); // Marcar el final del archivo
-                    System.out.println("[OrdenAlfabetico] Fin de archivo");
-                    break;
+   public void run() {
+    List<String> block = new ArrayList<>();
+    final int BLOCK_SIZE = 1000; // o el tamaño que consideres adecuado
+    try {
+        while (true) {
+            String line = inputQueue.take();
+            if (line.equals("EOF")) {
+                if (!block.isEmpty()) {
+                    processBlock(block);
                 }
-                System.out.println("[OrdenAlfabetico] Agregando rotación a la lista: " + rotation);
-                rotations.add(rotation);
+                outputQueue.put("EOF");
+                break;
             }
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+            block.add(line);
+            if (block.size() >= BLOCK_SIZE) {
+                processBlock(block);
+                block.clear();
+            }
         }
+    } catch (InterruptedException e) {
+        e.printStackTrace();
     }
+}
+
+private void processBlock(List<String> block) throws InterruptedException {
+    Collections.sort(block, String.CASE_INSENSITIVE_ORDER);
+    for (String sortedLine : block) {
+        outputQueue.put(sortedLine);
+    }
+    System.out.println("[OrdenAlfabetico] Bloque procesado y enviado.");
+}
+
 }
