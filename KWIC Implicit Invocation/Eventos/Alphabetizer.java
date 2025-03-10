@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Alphabetizer implements EventListener {
-    private EventManager eventManager;
+    private MasterControl eventManager;
     private List<String> shifts = new ArrayList<>();
 
-    public Alphabetizer(EventManager eventManager) {
+    public Alphabetizer(MasterControl eventManager) {
         this.eventManager = eventManager;
         eventManager.subscribe("shift_generated", this);
     }

@@ -1,7 +1,7 @@
 package Eventos;
 
-public class Salida implements EventListener {
-    public Salida(EventManager eventManager) {
+public class Output implements EventListener {
+    public Output(MasterControl eventManager) {
         eventManager.subscribe("sorted_shift", this);
     }
 

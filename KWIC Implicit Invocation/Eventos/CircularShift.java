@@ -3,10 +3,10 @@ package Eventos;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Rotacion implements EventListener {
-    private EventManager eventManager;
+public class CircularShift implements EventListener {
+    private MasterControl eventManager;
 
-    public Rotacion(EventManager eventManager) {
+    public CircularShift(MasterControl eventManager) {
         this.eventManager = eventManager;
         eventManager.subscribe("line_read", this);
     }

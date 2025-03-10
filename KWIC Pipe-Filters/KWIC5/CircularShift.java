@@ -1,10 +1,10 @@
 
 
-public class Rotacion implements Runnable {
+public class CircularShift implements Runnable {
     private final Pipe inputQueue;
     private final Pipe outputQueue;
 
-    public Rotacion(Pipe inputQueue, Pipe outputQueue) {
+    public CircularShift(Pipe inputQueue, Pipe outputQueue) {
         this.inputQueue = inputQueue;
         this.outputQueue = outputQueue;
     }

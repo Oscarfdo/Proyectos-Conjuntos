@@ -17,7 +17,7 @@ public class Main {
 
         // Crear los filtros y ejecutarlos en hilos
         new Thread(new Lector(salida1)).start();
-        new Thread(new Rotacion(entrada1, salida2)).start();
+        new Thread(new CircularShift(entrada1, salida2)).start();
         new Thread(new Ordenar(entrada2, salida3)).start();
         new Thread(new Imprimir(entrada3)).start();
     }

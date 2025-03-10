@@ -5,11 +5,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class OrdenAlfabetico implements Runnable {
+public class Alphabetizer implements Runnable {
     private final Pipe inputQueue;
     private final Pipe outputQueue;
 
-    public OrdenAlfabetico(Pipe inputQueue, Pipe outputQueue) {
+    public Alphabetizer(Pipe inputQueue, Pipe outputQueue) {
         this.inputQueue = inputQueue;
         this.outputQueue = outputQueue;
     }

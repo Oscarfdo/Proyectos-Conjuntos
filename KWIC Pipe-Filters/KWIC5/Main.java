@@ -11,10 +11,10 @@ public class Main {
         Pipe queue3 = new Pipe();
 
         // Crear instancias de los filtros
-        Reader inputFilter = new Reader(filePath, queue1);
-        Rotacion rotationFilter = new Rotacion(queue1, queue2);
-        OrdenAlfabetico sortingFilter = new OrdenAlfabetico(queue2, queue3);
-        Salida outputFilter = new Salida(queue3);
+        Input inputFilter = new Input(filePath, queue1);
+        CircularShift rotationFilter = new CircularShift(queue1, queue2);
+        Alphabetizer sortingFilter = new Alphabetizer(queue2, queue3);
+        Output outputFilter = new Output(queue3);
 
         // Crear hilos para cada filtro
         Thread inputThread = new Thread(inputFilter);

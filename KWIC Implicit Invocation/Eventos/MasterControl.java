@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class EventManager {
+public class MasterControl {
     private Map<String, List<EventListener>> listeners = new HashMap<>();
 
     public void subscribe(String eventType, EventListener listener) {

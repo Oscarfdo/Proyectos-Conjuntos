@@ -5,11 +5,11 @@ import java.io.FileReader;
 import java.io.IOException;
 
 
-public class Reader implements Runnable {
+public class Input implements Runnable {
     private final String filePath;
     private final Pipe outputQueue;
 
-    public Reader(String filePath, Pipe outputQueue) {
+    public Input(String filePath, Pipe outputQueue) {
         this.filePath = filePath;
         this.outputQueue = outputQueue;
     }
@@ -23,12 +23,12 @@ public class Reader implements Runnable {
                 String[] sentences = line.split("(?<=[.,])\\s+");
 
                 for (String sentence : sentences) {
-                    System.out.println("[Reader] Enviando: " + sentence.trim()); // Depuración
+                    System.out.println("[Input] Enviando: " + sentence.trim()); // Depuración
                outputQueue.put(sentence.trim()); // Enviar cada oración individualmente
                 }
             }
             outputQueue.put("EOF"); // Marcar el final del archivo
-            System.out.println("[Reader] Fin de archivo");
+            System.out.println("[Input] Fin de archivo");
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }

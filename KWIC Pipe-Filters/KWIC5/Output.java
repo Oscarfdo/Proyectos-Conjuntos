@@ -2,11 +2,11 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class Salida implements Runnable {
+public class Output implements Runnable {
     private final Pipe inputQueue;
     private final String outputFilePath = "KWIC Pipe-Filters/KWIC5/Salida.txt"; // Ruta del archivo de salida
 
-    public Salida(Pipe inputQueue) {
+    public Output(Pipe inputQueue) {
         this.inputQueue = inputQueue;
     }
 
