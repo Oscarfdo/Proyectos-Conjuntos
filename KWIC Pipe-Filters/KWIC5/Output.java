@@ -1,13 +1,19 @@
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Scanner;
 
 public class Output implements Runnable {
     private final Pipe inputQueue;
-    private final String outputFilePath = "KWIC Pipe-Filters/KWIC5/Salida.txt"; // Ruta del archivo de salida
+    private final String outputFilePath;
 
     public Output(Pipe inputQueue) {
         this.inputQueue = inputQueue;
+
+        // Pedir al usuario el nombre del archivo de salida
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Ingrese el nombre del archivo de salida (incluya la extensión .txt): ");
+        this.outputFilePath = scanner.nextLine();
     }
 
     @Override
