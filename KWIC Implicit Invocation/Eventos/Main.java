@@ -9,7 +9,8 @@ public class Main {
         Alphabetizer alphabetizer = new Alphabetizer(masterControl);
         Output outputWriter = new Output(masterControl);
 
-        inputReader.readInputFromFile();  // Leer desde el archivo
-        alphabetizer.sortAndPublish();
+        inputReader.readInputFromFile();  
+        alphabetizer.publishSortedShifts();  
+        
     }
 }

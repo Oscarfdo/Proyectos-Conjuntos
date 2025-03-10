@@ -18,6 +18,7 @@ public class CircularShift implements EventListener {
             List<String> shifts = generateShifts(line);
             for (String shift : shifts) {
                 eventManager.publish(new Event("shift_generated", shift));
+                System.out.println("[CircularShifter] Generado desplazamiento: " + shift);
             }
         }
     }

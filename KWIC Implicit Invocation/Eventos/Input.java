@@ -17,21 +17,20 @@ public class Input implements EventListener {
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line;
             while ((line = br.readLine()) != null) {
-                // Dividir la línea en oraciones basadas en signos de puntuación
                 System.out.println("[InputReader] Leyendo línea: " + line.trim());
                 String[] sentences = splitIntoSentences(line);
-                System.out.println("[InputReader] Lineas despues del split: " + sentences.length);
+                System.out.println("[InputReader] Líneas después del split: " + sentences.length);
                 for (String sentence : sentences) {
-                    System.out.println("[InputReader] Leyendo línea: " + sentence.trim());
+                    System.out.println("[InputReader] Procesando oración: " + sentence.trim());
                     eventManager.publish(new Event("line_read", sentence.trim()));
                 }
             }
+            System.out.println("[InputReader] Fin de la lectura del archivo.");
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    //Método para dividir una línea en oraciones basadas en signos de puntuación.
     private String[] splitIntoSentences(String line) {
         return line.split("(?<=[.,!?])\\s+");
     }

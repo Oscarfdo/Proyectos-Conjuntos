@@ -1,11 +1,11 @@
 package Eventos;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class Alphabetizer implements EventListener {
     private MasterControl eventManager;
-    private List<String> shifts = new ArrayList<>();
+    private Set<String> shifts = new TreeSet<>(String.CASE_INSENSITIVE_ORDER);
 
     public Alphabetizer(MasterControl eventManager) {
         this.eventManager = eventManager;
@@ -15,14 +15,15 @@ public class Alphabetizer implements EventListener {
     @Override
     public void onEvent(Event event) {
         if (event.getType().equals("shift_generated")) {
-            shifts.add((String) event.getData());
+            shifts.add((String) event.getData());  // TreeSet mantiene el orden automáticamente
+            System.out.println("[Alphabetizer] Agregado desplazamiento a la lista");
         }
     }
 
-    public void sortAndPublish() {
-        shifts.sort(String.CASE_INSENSITIVE_ORDER);
+    public void publishSortedShifts() {
         for (String shift : shifts) {
             eventManager.publish(new Event("sorted_shift", shift));
+            System.out.println("[Alphabetizer] Publicado desplazamiento ordenado: " + shift);
         }
     }
 }
