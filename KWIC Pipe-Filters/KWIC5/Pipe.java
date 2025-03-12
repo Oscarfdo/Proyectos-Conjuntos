@@ -1,4 +1,9 @@
-
+/*
+ Sofia Alejandra Vargas Flores & Oscar Fernando Hernandez Lopez
+ 12/Marzo/2025
+ Clase Pipe
+ Clase que implementa un tubo de comunicación entre hilos
+ */
 
 
 import java.util.concurrent.BlockingQueue;

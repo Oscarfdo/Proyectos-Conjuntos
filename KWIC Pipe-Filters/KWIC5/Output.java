@@ -1,19 +1,21 @@
+/*
+ Sofia Alejandra Vargas Flores & Oscar Fernando Hernandez Lopez
+ 12/Marzo/2025
+ Clase Output
+ Guarda los desplazamientos ordenados y genera un archivo de salida
+ */
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Scanner;
 
 public class Output implements Runnable {
     private final Pipe inputQueue;
     private final String outputFilePath;
 
-    public Output(Pipe inputQueue) {
+    public Output(Pipe inputQueue, String inputFileName) {
         this.inputQueue = inputQueue;
-
-        // Pedir al usuario el nombre del archivo de salida
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Ingrese el nombre del archivo de salida (incluya la extensión .txt): ");
-        this.outputFilePath = scanner.nextLine();
+        // Generar el nombre del archivo de salida basado en el de entrada
+        this.outputFilePath = inputFileName + "Output.txt";
     }
 
     @Override

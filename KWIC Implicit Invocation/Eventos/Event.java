@@ -1,3 +1,9 @@
+/*
+ Sofia Alejandra Vargas Flores & Oscar Fernando Hernandez Lopez
+ 12/Marzo/2025
+ Clase Event
+ CLase que representa un evento con un tipo y datos asociados
+ */
 package Eventos;
 
 public class Event {

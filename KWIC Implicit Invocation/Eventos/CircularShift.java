@@ -1,3 +1,10 @@
+/*
+ Sofia Alejandra Vargas Flores & Oscar Fernando Hernandez Lopez
+ 12/Marzo/2025
+ Clase CircularShift
+ Generar los desplazamientos circulares de las oraciones
+*/
+
 package Eventos;
 
 import java.util.ArrayList;
@@ -15,25 +22,20 @@ public class CircularShift implements EventListener {
     public void onEvent(Event event) {
         if (event.getType().equals("line_read")) {
             String line = (String) event.getData();
-            List<String> shifts = generateShifts(line);
+            List<String> shifts = new ArrayList<>();
+            String[] words = line.split(" ");
+            for (int i = 0; i < words.length; i++) {
+                String shift = String.join(" ", words);
+                shifts.add(shift);
+                // Rotar las palabras
+                String firstWord = words[0];
+                System.arraycopy(words, 1, words, 0, words.length - 1);
+                words[words.length - 1] = firstWord;
+            }
             for (String shift : shifts) {
                 eventManager.publish(new Event("shift_generated", shift));
                 System.out.println("[CircularShifter] Generado desplazamiento: " + shift);
             }
         }
-    }
-
-    private List<String> generateShifts(String line) {
-        List<String> shifts = new ArrayList<>();
-        String[] words = line.split(" ");
-        for (int i = 0; i < words.length; i++) {
-            String shift = String.join(" ", words);
-            shifts.add(shift);
-            // Rotar las palabras
-            String firstWord = words[0];
-            System.arraycopy(words, 1, words, 0, words.length - 1);
-            words[words.length - 1] = firstWord;
-        }
-        return shifts;
     }
 }

@@ -1,3 +1,9 @@
+/*
+ Sofia Alejandra Vargas Flores & Oscar Fernando Hernandez Lopez
+ 12/Marzo/2025
+ Clase Alphabetizer
+ Ordenar los desplazamientos generados alfabéticamente
+ */
 package Eventos;
 
 import java.util.Set;
@@ -15,7 +21,7 @@ public class Alphabetizer implements EventListener {
     @Override
     public void onEvent(Event event) {
         if (event.getType().equals("shift_generated")) {
-            shifts.add((String) event.getData());  // TreeSet mantiene el orden automáticamente
+            shifts.add((String) event.getData());  
             System.out.println("[Alphabetizer] Agregado desplazamiento a la lista");
         }
     }

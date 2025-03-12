@@ -1,3 +1,9 @@
+/*
+ Sofia Alejandra Vargas Flores & Oscar Fernando Hernandez Lopez
+ 12/Marzo/2025
+ Clase MasterControl
+ COntrola la suscripción y publicación de eventos
+ */
 package Eventos;
 
 import java.util.ArrayList;
