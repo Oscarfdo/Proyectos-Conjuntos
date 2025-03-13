@@ -10,7 +10,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class Input implements EventListener {
+public class Input {
     private MasterControl eventManager;
     private String filePath;
 
@@ -39,10 +39,5 @@ public class Input implements EventListener {
             System.err.println("Error al leer el archivo: " + filePath);
             e.printStackTrace();
         }
-    }
-
-    @Override
-    public void onEvent(Event event) {
-        // No necesita reaccionar a eventos
     }
 }

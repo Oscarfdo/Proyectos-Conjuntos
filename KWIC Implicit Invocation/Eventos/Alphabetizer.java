@@ -22,7 +22,7 @@ public class Alphabetizer implements EventListener {
     public void onEvent(Event event) {
         if (event.getType().equals("shift_generated")) {
             shifts.add((String) event.getData());  
-            System.out.println("[Alphabetizer] Agregado desplazamiento a la lista");
+            System.out.println("[Alphabetizer] Agregado desplazamiento a la lista" + shifts);
         }
     }
 
